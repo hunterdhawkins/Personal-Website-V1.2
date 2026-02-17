@@ -127,3 +127,6 @@ STATIC_URL = "/static/"
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
 ]
+
+# https://stackoverflow.com/questions/61059125/embeded-pdf-file-is-not-displaying-in-django
+X_FRAME_OPTIONS = 'SAMEORIGIN'
