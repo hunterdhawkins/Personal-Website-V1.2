@@ -38,6 +38,16 @@ def projects(request):
     )
 
 
+def sources(request):
+
+    return render(
+        request,
+        "home/sources.html",
+        {
+        },
+    )
+
+
 # https://stackoverflow.com/questions/11779246/how-to-show-a-pdf-file-in-a-django-view
 def pdf_view(request, filename):
     print(filename)
