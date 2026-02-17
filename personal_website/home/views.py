@@ -50,17 +50,14 @@ def sources(request):
 
 # https://stackoverflow.com/questions/11779246/how-to-show-a-pdf-file-in-a-django-view
 def pdf_view(request, filename):
-    print(filename)
+    # There is probably a better way to query that just returns the single object
     document = models.Documentation.objects.filter(document_name=filename)
-    print(document)
     try:
         document = document[0]
     except IndexError:
         raise Http404()
-    print(document.document_name)
     file_path = os.path.join(settings.MEDIA_ROOT, 'documentation', document.document_name)
 
-    # print(file_path)
     try:
         return FileResponse(open(file_path, 'rb'), content_type='application/pdf')
     except FileNotFoundError:
