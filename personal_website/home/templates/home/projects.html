@@ -1,3 +1,48 @@
 {% extends "base.html" %}
+{% load static %}
 {% block content %}
+    <link href="{% static 'home/css/cards_panels.css' %}" rel="stylesheet" />
+
+	<div class="container">
+		<div class="panel active" style="background-image: url('https://images.unsplash.com/photo-1771272338329-1ab5145559a5?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')">
+			<h3>Explore the World</h3>
+		</div>
+		<div class="panel" style="background-image: url('https://images.unsplash.com/photo-1771250557679-52dd03d40d92?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')">
+			<h3>Street</h3>
+		</div>
+		<div class="panel" style="background-image: url('https://images.unsplash.com/photo-1771271949525-60603b18b16b?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')">
+			<h3>Big Red Ball</h3>
+		</div>
+		<div class="panel" style="background-image: url('https://plus.unsplash.com/premium_photo-1669298094351-44092e1bfa5b?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')">
+			<h3>Snow</h3>
+		</div>
+		<div class="panel" style="background-image: url('https://images.unsplash.com/photo-1770008022916-bd44a163f524?q=80&w=1632&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')">
+			<h3>Wall</h3>
+		</div>
+
+	</div>
+{% endblock %}
+{% block page_scripts %}
+<script type="text/javascript">
+	// Get all the individual Panels
+	const panels = document.querySelectorAll('.panel')
+
+	// Iterate through the panels.
+	// If one of them is clicked by the user
+	// remove all the active portions of their class
+	// and then add the active class to the one that was clicked
+	panels.forEach((panel) => {
+		panel.addEventListener('click', () =>{
+			removeActiveClasses()
+			panel.classList.add('active')
+		})
+
+	})
+
+	function removeActiveClasses(){
+		panels.forEach((panel) =>{
+			panel.classList.remove('active')
+		})
+	}
+</script>
 {% endblock %}
