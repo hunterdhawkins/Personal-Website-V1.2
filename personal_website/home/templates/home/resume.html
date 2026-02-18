@@ -1,7 +1,18 @@
 {% extends "base.html" %}
+{% load static %}
+
 {% block content %}
-  <div class="mt-5 mb-5">
-    <h4>Resume</h4>
-    <embed src="{% url 'home-view-pdf' filename='Hunter_Hawkins_Resume_Website.pdf' %}" type="application/pdf" width="75%" height="600px" style="border:1px solid #ccc;" />
+<style>
+.pdf-container {
+  height: 100vh;
+  width: 100vw;
+}
+
+</style>
+
+<section class="bg-body py-2">
+  <div class="text-center pdf-container">
+    <embed src="{% url 'home-view-pdf' filename='Hunter_Hawkins_Resume_Website.pdf' %}" type="application/pdf" width="65%" height="90%" />
   </div>
+</section>
 {% endblock %}
