@@ -9,7 +9,6 @@ urlpatterns = [
     path("projects/", views.projects, name='home-projects'),
     path("sources/", views.sources, name='home-sources'),
     path("project/<str:slug>/", views.individual_project, name="home-individual-project"),
-
     path("documentation/<str:filename>/", views.pdf_view, name="home-view-pdf"),
 ]
 

@@ -10,21 +10,25 @@
 </style>
 
 <link href="{% static 'home/css/cards_panels.css' %}" rel="stylesheet" />
-
-    <h2 class="display-5 fw-bolder"><span class="text-gradient d-inline">{{ project.project_name }}</span></h2>
-    <div class="container">
-      {% for photo in photos %}
-          {% if forloop.first %}
-            <div class="panel active" style="background-image: url('{{ photo.image.url }}')">
-              <h3 class="text-white bg-dark">{{photo.image_description}}</h3>
-            </div>
-          {% else %}
-            <div class="panel" style="background-image: url('{{ photo.image.url }}')">
-              <h3 class="text-white bg-dark">{{photo.image_description}}</h3>
-            </div>
-          {% endif %}
-      {% endfor %}
-    </div>
+  <h2 class="display-5 fw-bolder"><span class="text-gradient d-inline">{{ project.project_name }}</span></h2>
+  <div class="fs-3 fw-light">{{project.project_location}}</div>
+  <div class="container">
+    {% for photo in photos %}
+        {% if forloop.first %}
+          <div class="panel active" style="background-image: url('{{ photo.image.url }}')">
+            <h3 class="text-white bg-dark">{{photo.image_description}}</h3>
+          </div>
+        {% else %}
+          <div class="panel" style="background-image: url('{{ photo.image.url }}')">
+            <h3 class="text-white bg-dark">{{photo.image_description}}</h3>
+          </div>
+        {% endif %}
+    {% endfor %}
+    <br>
+  </div>
+  <div class="container">
+    <p><b>Project Description: </b>{{project.project_description}}</p>
+  </div>
 
 {% endblock %}
 
