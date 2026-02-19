@@ -10,9 +10,17 @@
 
 </style>
 
-<section class="bg-body py-2">
+<section class="bg-body py-1">
   <div class="text-center pdf-container">
-    <embed src="{% url 'home-view-pdf' filename='Hunter_Hawkins_Resume_Website.pdf' %}" type="application/pdf" width="65%" height="90%" />
+    
+    <!-- Create a link to download/view the file -->
+    <a href="{{ resume.document.url }}" target="_blank">
+        View/Download File
+    </a>
+    <div class="mb-3"></div>
+    <br>
+    <embed src="{{ resume.document.url }}" type="application/pdf" width="60%" height="85%" />
+
   </div>
 </section>
 {% endblock %}

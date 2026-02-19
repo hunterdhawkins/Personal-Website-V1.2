@@ -19,17 +19,20 @@ def home(request):
 
 
 def resume(request):
-
+    resume = models.Documentation.objects.get(document_name="Hunter_Hawkins_Resume_Website")
+    print(resume)
     return render(
         request,
         "home/resume.html",
         {
+            "resume": resume,
         },
     )
 
 
 def projects(request):
     projects = models.Project.objects.all()
+    # keywords = models.TechnologyUsed.objects.filter(project=)
 
     return render(
         request,
