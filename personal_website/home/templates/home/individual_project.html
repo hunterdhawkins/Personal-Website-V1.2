@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<style>
+.project-container {
+  height: 100vh;
+  width: 100vw;
+}
+</style>
+
+<link href="{% static 'home/css/cards_panels.css' %}" rel="stylesheet" />
+
+    <h2 class="display-5 fw-bolder"><span class="text-gradient d-inline">{{ project.project_name }}</span></h2>
+    <div class="container">
+      {% for photo in photos %}
+          {% if forloop.first %}
+            <div class="panel active" style="background-image: url('{{ photo.image.url }}')">
+              <h3 class="text-white bg-dark">{{photo.image_description}}</h3>
+            </div>
+          {% else %}
+            <div class="panel" style="background-image: url('{{ photo.image.url }}')">
+              <h3 class="text-white bg-dark">{{photo.image_description}}</h3>
+            </div>
+          {% endif %}
+      {% endfor %}
+    </div>
+
+{% endblock %}
+
+{% block page_scripts %}
+<script type="text/javascript">
+  // Get all the individual Panels
+  const panels = document.querySelectorAll('.panel')
+
+  // Iterate through the panels.
+  // If one of them is clicked by the user
+  // remove all the active portions of their class
+  // and then add the active class to the one that was clicked
+  panels.forEach((panel) => {
+    panel.addEventListener('click', () =>{
+      removeActiveClasses()
+      panel.classList.add('active')
+    })
+
+  })
+
+  function removeActiveClasses(){
+    panels.forEach((panel) =>{
+      panel.classList.remove('active')
+    })
+  }
+</script>
+{% endblock %}

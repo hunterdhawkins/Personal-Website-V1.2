@@ -1,4 +1,5 @@
 from django.db import models
+from django.utils.text import slugify
 
 
 # Create your models here.
@@ -9,9 +10,15 @@ class Documentation(models.Model):
 
 
 class Project(models.Model):
-    project_name = models.CharField(default="", max_length=128)
+    project_name = models.CharField(default="", max_length=128, unique=True)
+    slug = models.SlugField(max_length=128, unique=True, blank=True)
     project_location = models.TextField(default="")
     project_description = models.TextField(default="")
+
+    def save(self, *args, **kwargs):
+        if not self.slug:
+            self.slug = slugify(self.project_name)
+        super().save(*args, **kwargs)
 
 
 class TechnologyUsed(models.Model):
@@ -20,6 +27,6 @@ class TechnologyUsed(models.Model):
 
 
 class ProjectPhotos(models.Model):
-    image = models.FileField(upload_to="images", blank=True, null=True)
-    image_name = models.TextField(default="", unique=True)
+    image = models.ImageField(upload_to="images/")
+    image_description = models.TextField(default="", blank=True, null=True)
     project = models.ForeignKey(Project, on_delete=models.CASCADE)

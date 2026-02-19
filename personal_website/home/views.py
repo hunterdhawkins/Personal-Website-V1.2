@@ -29,11 +29,27 @@ def resume(request):
 
 
 def projects(request):
+    projects = models.Project.objects.all()
 
     return render(
         request,
         "home/projects.html",
         {
+            "projects": projects,
+        },
+    )
+
+
+def individual_project(request, slug):
+    project = models.Project.objects.get(slug=slug)
+    photos = models.ProjectPhotos.objects.filter(project=project)
+
+    return render(
+        request,
+        "home/individual_project.html",
+        {
+            "project": project,
+            "photos": photos,
         },
     )
 
@@ -51,11 +67,7 @@ def sources(request):
 # https://stackoverflow.com/questions/11779246/how-to-show-a-pdf-file-in-a-django-view
 def pdf_view(request, filename):
     # There is probably a better way to query that just returns the single object
-    document = models.Documentation.objects.filter(document_name=filename)
-    try:
-        document = document[0]
-    except IndexError:
-        raise Http404()
+    document = models.Documentation.objects.get(document_name=filename)
     file_path = os.path.join(settings.MEDIA_ROOT, 'documentation', document.document_name)
 
     try:

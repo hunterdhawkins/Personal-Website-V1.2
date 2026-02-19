@@ -130,3 +130,7 @@ STATICFILES_DIRS = [
 
 # https://stackoverflow.com/questions/61059125/embeded-pdf-file-is-not-displaying-in-django
 X_FRAME_OPTIONS = 'SAMEORIGIN'
+
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')

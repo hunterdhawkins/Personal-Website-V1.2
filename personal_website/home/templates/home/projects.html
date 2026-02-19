@@ -1,48 +1,39 @@
 {% extends "base.html" %}
 {% load static %}
 {% block content %}
-    <link href="{% static 'home/css/cards_panels.css' %}" rel="stylesheet" />
+<section class="bg-light py-3">
+    <div class="container px-5">
+        <div class="row gx-5 justify-content-center">
+            <div class="col-xxl-12">
+                <div class="text-center my-2">
+                    <h2 class="display-5 fw-bolder"><span class="text-gradient d-inline">Projects</span></h2>
+                    <div class="container my-5">
+                        <div class="row g-4">
 
-	<div class="container">
-		<div class="panel active" style="background-image: url('https://images.unsplash.com/photo-1771272338329-1ab5145559a5?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')">
-			<h3>Explore the World</h3>
-		</div>
-		<div class="panel" style="background-image: url('https://images.unsplash.com/photo-1771250557679-52dd03d40d92?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')">
-			<h3>Street</h3>
-		</div>
-		<div class="panel" style="background-image: url('https://images.unsplash.com/photo-1771271949525-60603b18b16b?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')">
-			<h3>Big Red Ball</h3>
-		</div>
-		<div class="panel" style="background-image: url('https://plus.unsplash.com/premium_photo-1669298094351-44092e1bfa5b?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')">
-			<h3>Snow</h3>
-		</div>
-		<div class="panel" style="background-image: url('https://images.unsplash.com/photo-1770008022916-bd44a163f524?q=80&w=1632&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')">
-			<h3>Wall</h3>
-		</div>
+                        	{% for project in projects %}
+	                            <div class="col-12">
+	                                <div class="card shadow-sm education-card">
+	                                    <div class="card-body text-start">
+	                                        <div class="d-flex justify-content-between flex-wrap">
+	                                            <h5 class="mb-1">{{project.project_name}}</h5>
+	                                            <span class="fw-semibold">{{project.project_location}}</span>
+	                                        </div>
+	                                        <div class="d-flex justify-content-between flex-wrap">
+	                                            <p class="mb-1 text-muted fw-semibold">{{project.project_description}}</p>
+	                                        </div>
+											<a href="{% url 'home-individual-project' slug=project.slug %}" class="btn btn-info" role="button">Learn More</a>
+	                                    </div>
+	                                </div>
+	                            </div>
+                            {% endfor %}
 
-	</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 {% endblock %}
 {% block page_scripts %}
-<script type="text/javascript">
-	// Get all the individual Panels
-	const panels = document.querySelectorAll('.panel')
-
-	// Iterate through the panels.
-	// If one of them is clicked by the user
-	// remove all the active portions of their class
-	// and then add the active class to the one that was clicked
-	panels.forEach((panel) => {
-		panel.addEventListener('click', () =>{
-			removeActiveClasses()
-			panel.classList.add('active')
-		})
-
-	})
-
-	function removeActiveClasses(){
-		panels.forEach((panel) =>{
-			panel.classList.remove('active')
-		})
-	}
-</script>
 {% endblock %}
