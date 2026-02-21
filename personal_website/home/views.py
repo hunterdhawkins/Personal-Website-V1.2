@@ -31,8 +31,9 @@ def resume(request):
 
 
 def projects(request):
-    projects = models.Project.objects.all()
-    # keywords = models.TechnologyUsed.objects.filter(project=)
+    # Prefetch the keywords for the project. Reverse foreign key lookup
+    # https://medium.com/@soverignchriss/understanding-select-related-and-prefetch-related-methods-in-django-orm-db36003d5fbf
+    projects = models.Project.objects.prefetch_related("keywords").order_by('project_name')
 
     return render(
         request,

@@ -18,9 +18,18 @@
 	                                            <h5 class="mb-1">{{project.project_name}}</h5>
 	                                            <span class="fw-semibold">{{project.project_location}}</span>
 	                                        </div>
-	                                        <div class="d-flex justify-content-between flex-wrap">
+											<!-- <div class="d-flex justify-content-between flex-wrap">
 	                                            <p class="mb-1 text-muted fw-semibold">{{project.project_description}}</p>
-	                                        </div>
+	                                        </div> -->
+	                                        <div class="d-flex justify-content-between flex-wrap">
+	                                        	<div class="badge bg-gradient-primary-to-secondary text-white mt-1 mb-2">
+	                                        		<div class="text-uppercase fs-8">
+		                                        		{% for keyword in project.keywords.all %}
+	    													{{ keyword.name }} &middot
+	  													{% endfor %}
+	  												</div>
+	  											</div>
+  											</div>
 											<a href="{% url 'home-individual-project' slug=project.slug %}" class="btn btn-info" role="button">Learn More</a>
 	                                    </div>
 	                                </div>

@@ -23,7 +23,7 @@ class Project(models.Model):
 
 class TechnologyUsed(models.Model):
     name = models.CharField(default="", max_length=64)
-    project = models.ForeignKey(Project, on_delete=models.CASCADE)
+    project = models.ForeignKey(Project, related_name="keywords", on_delete=models.CASCADE)
 
 
 class ProjectPhotos(models.Model):
