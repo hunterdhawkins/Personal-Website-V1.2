@@ -9,11 +9,12 @@ from home import utils, models
 
 
 def home(request):
-
+    hunter_photo = models.PersonalPhotos.objects.get(image_name="Hunter_Hawkins_Character_Transparent_BG")
     return render(
         request,
         "home/home.html",
         {
+            'hunter_photo': hunter_photo,
         },
     )
 

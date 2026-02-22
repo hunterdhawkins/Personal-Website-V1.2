@@ -13,6 +13,7 @@ class Project(models.Model):
     project_name = models.CharField(default="", max_length=128, unique=True)
     slug = models.SlugField(max_length=128, unique=True, blank=True)
     project_location = models.TextField(default="")
+    project_short_description = models.TextField(default="")
     project_description = models.TextField(default="")
 
     def save(self, *args, **kwargs):
@@ -30,3 +31,8 @@ class ProjectPhotos(models.Model):
     image = models.ImageField(upload_to="images/")
     image_description = models.TextField(default="", blank=True, null=True)
     project = models.ForeignKey(Project, on_delete=models.CASCADE)
+
+
+class PersonalPhotos(models.Model):
+    image = models.ImageField(upload_to="images/")
+    image_name = models.TextField(default="", unique=True)
