@@ -21,11 +21,12 @@ load_dotenv()
 # See https://docs.djangoproject.com/en/6.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.getenv('DJANGO_DEBUG')
+SECRET_KEY = os.getenv('DJANGO_SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.getenv('DJANGO_DEBUG')
+# DEBUG = os.getenv('DJANGO_DEBUG')
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['hunterdhawkins.pythonanywhere.com', 'hunterdhawkins.com', 'www.hunterdhawkins.com']
 
 
 # Application definition
@@ -118,13 +119,13 @@ USE_TZ = True
 STATIC_URL = "/static/"
 
 # Used in production. Is absolute file path where are static files are collected
-# STATIC_ROOT = os.path.join(BASE_DIR, "static")
+STATIC_ROOT = os.path.join(BASE_DIR, "static")
 
 # List of directories where collect static and development server will look for static files
 # outside the individual app static folders
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static'),
-]
+# STATICFILES_DIRS = [
+#     os.path.join(BASE_DIR, 'static'),
+# ]
 
 # https://stackoverflow.com/questions/61059125/embeded-pdf-file-is-not-displaying-in-django
 X_FRAME_OPTIONS = 'SAMEORIGIN'
