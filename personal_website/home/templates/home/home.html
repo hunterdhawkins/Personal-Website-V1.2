@@ -3,13 +3,8 @@
 {% block content %}
 <!-- Header-->
 <style>
- .micro-text {
-    margin-top: -4px;
-    letter-spacing: 0.5px;
- }
-
-
 </style>
+
 <header class="py-2">
     <div class="container px-5 pb-5">
         <div class="row gx-5 align-items-center">
@@ -28,7 +23,7 @@
             <div class="col-xxl-7">
                 <!-- Header profile picture-->
                 <div class="d-flex justify-content-center mt-5 mt-xxl-0">
-                    <div class="profile bg-gradient-primary-to-secondary">
+                    <div class="profile bg-gradient-primary-to-secondary" data-aos="flip-left" data-aos-duration="1500">
                         <!-- TIP: For best results, use a photo with a transparent background like the demo example below-->
                         <!-- Watch a tutorial on how to do this on YouTube (link)-->
                         <img class="profile-img" src="{{ hunter_photo.image.url }}" alt="Hunter Picture Coming Soon" />
@@ -150,10 +145,11 @@
         </div>
     </div>
 </header>
+
 <!-- About Section-->
 <section class="bg-light py-5">
     <div class="container px-5">
-        <div class="row gx-5 justify-content-center">
+        <div class="row gx-5 justify-content-center" data-aos="fade-right" data-aos-duration="1500">
             <div class="col-xxl-12">
                 <div class="text-center my-5">
                     <h2 class="display-5 fw-bolder"><span class="text-gradient d-inline">About Me</span></h2>
@@ -167,7 +163,7 @@
 
 <section class="bg-body py-3">
     <div class="container px-5">
-        <div class="row gx-5 justify-content-center">
+        <div class="row gx-5 justify-content-center" data-aos="fade-left" data-aos-duration="1500">
             <div class="col-xxl-12">
                 <div class="text-center my-5">
                     <h2 class="display-5 fw-bolder"><span class="text-gradient d-inline">Work Experience Overview</span></h2>
@@ -225,7 +221,7 @@
 
 <section class="bg-light py-3">
     <div class="container px-5">
-        <div class="row gx-5 justify-content-center">
+        <div class="row gx-5 justify-content-center" data-aos="fade-right" data-aos-duration="1500">
             <div class="col-xxl-12">
                 <div class="text-center my-5">
                     <h2 class="display-5 fw-bolder"><span class="text-gradient d-inline">Education Overview</span></h2>
@@ -321,7 +317,7 @@
 
 <section class="bg-body py-3">
     <div class="container px-5">
-        <div class="row gx-5 justify-content-center">
+        <div class="row gx-5 justify-content-center" data-aos="fade-left" data-aos-duration="1500">
             <div class="col-xxl-12">
                 <div class="text-center my-5">
                     <h2 class="display-5 fw-bolder"><span class="text-gradient d-inline">Toolchain Experience</span></h2>
@@ -368,5 +364,12 @@
         </div>
     </div>
 </section> -->
+
+{% endblock %}
+
+{% block page_scripts %}
+<script>
+    AOS.init();
+</script>
 
 {% endblock %}
