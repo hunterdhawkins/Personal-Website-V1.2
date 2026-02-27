@@ -2,11 +2,33 @@
 {% load static %}
 {% block content %}
 <link href="{% static 'template_css/styles.css' %}" rel="stylesheet" />
+
+<!-- <div class="row gx-5 justify-content-center" >
+
 <h1>This project used the following sources:</h1>
 <li>
     <ul>https://startbootstrap.com/theme/personal</ul>
     <ul>https://www.udemy.com/share/103Pje3@3L9cP6PcXHkocoC5yd9GFDvzr4sI7-03pe8JgfxdZ9hZjxHGMbSKYH4tz0HpBYv_/</ul>
     <ul>https://github.com/michalsnik/aos</ul>
 </li>
+</div> -->
 
+<section class="bg-light py-3">
+    <div class="container px-5">
+        <div class="row gx-5 justify-content-start">
+            <div class="col-xxl-12">
+                <div class="my-3 justify-content-start">
+                    <h2 class="display-5 fw-bolder"><span class="text-gradient d-inline">Sources:</span></h2>
+                    <div class="d-flex justify-content-start">
+                      <ul class="fs-3">
+                        <li class="mb-2"><a href="https://startbootstrap.com/theme/personal" target="_blank">Website Template</a></li>
+                        <li class="mb-2"><a href="https://www.udemy.com/share/103Pje3@3L9cP6PcXHkocoC5yd9GFDvzr4sI7-03pe8JgfxdZ9hZjxHGMbSKYH4tz0HpBYv_/" target="_blank">Udemy Course on Front End Projects</a></li>
+                        <li class="mb-2"><a href="https://github.com/michalsnik/aos" target="_blank">Page Elements Transitions</a></li>
+                      </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 {% endblock %}
