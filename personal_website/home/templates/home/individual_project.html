@@ -1,58 +1,87 @@
 {% extends "base.html" %}
 {% load static %}
 
-{% block content %}
+{% block styles %}
 <style>
-/*.project-container {
-  height: 100vh;
-  width: 100vw;
+  .carousel-wrapper {
+    max-width: 900px;
+    max-height: 600px;
+    overflow: hidden;
 }
-*/</style>
 
-<link href="{% static 'home/css/cards_panels.css' %}" rel="stylesheet" />
-  <h2 class="display-5 fw-bolder text-center"><span class="text-gradient d-inline">{{ project.project_name }}</span></h2>
-  <div class="fs-3 fw-light text-center">{{project.project_location}}</div>
-  <div class="container">
-    {% for photo in photos %}
-        {% if forloop.first %}
-          <div class="panel active" style="background-image: url('{{ photo.image.url }}')">
-            <h3 class="text-white bg-dark">{{photo.image_description}}</h3>
-          </div>
-        {% else %}
-          <div class="panel" style="background-image: url('{{ photo.image.url }}')">
-            <h3 class="text-white bg-dark">{{photo.image_description}}</h3>
-          </div>
-        {% endif %}
-    {% endfor %}
-    <br>
-  </div>
-  <div class="container">
-    <p><b>Project Description: </b>{{project.project_description}}</p>
-  </div>
+  .carousel-wrapper img {
+      object-fit: contain;
+      max-height: 600px;
+  }
 
+.carousel-caption {
+    width: auto;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 0; /* optional: removes extra spacing */
+}
+
+.carousel-caption h3 {
+    display: inline-block; /* makes the background wrap the text */
+    padding: 0.25rem 0.75rem; /* adjust to taste */
+    border-radius: 0.25rem;   /* optional: softer edges */
+}
+
+</style>
+{% endblock %}
+
+{% block content %}
+<section class="py-3 bg-light" id="features">
+    <div class="container px-5">
+      <h2 class="display-5 fw-bolder text-center"><span class="text-gradient d-inline">{{ project.project_name }}</span></h2>
+      <div class="fs-3 fw-light text-center">{{project.project_location}}</div>
+      <div class="carousel-wrapper mx-auto">
+        <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+          <div class="carousel-indicators">
+            {% for photo in photos %}
+              {% if forloop.first %}
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"></button>
+              {% else %}
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="{{ forloop.counter0 }}"></button>
+              {% endif %}
+            {% endfor %}
+          </div>
+          <div class="carousel-inner">
+          {% for photo in photos %}
+            {% if forloop.first %}
+              <div class="carousel-item active">
+                <img class="d-block w-100" src="{{ photo.image.url }}" alt="Wapiti Logo">
+                <div class="carousel-caption d-none d-md-block">
+                  <h3 class="text-white bg-dark">{{photo.image_description}}</h3>
+                </div>
+              </div>
+            {% else %}
+              <div class="carousel-item">
+                <img class="d-block w-100" src="{{ photo.image.url }}" alt="Second slide">
+                  <div class="carousel-caption d-none d-md-block">
+                    <h3 class="text-white bg-dark">{{photo.image_description}}</h3>
+                </div>
+              </div>
+            {% endif %}
+          {% endfor %}
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon bg-dark"></span>
+          </button>
+
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+            <span class="carousel-control-next-icon bg-dark"></span>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="container mt-4">
+      <p><b>Project Description: </b>{{project.project_description}}</p>
+    </div>
+  </section>
 {% endblock %}
 
 {% block page_scripts %}
 <script type="text/javascript">
-  // Get all the individual Panels
-  const panels = document.querySelectorAll('.panel')
-
-  // Iterate through the panels.
-  // If one of them is clicked by the user
-  // remove all the active portions of their class
-  // and then add the active class to the one that was clicked
-  panels.forEach((panel) => {
-    panel.addEventListener('click', () =>{
-      removeActiveClasses()
-      panel.classList.add('active')
-    })
-
-  })
-
-  function removeActiveClasses(){
-    panels.forEach((panel) =>{
-      panel.classList.remove('active')
-    })
-  }
-</script>
+  $('.carousel').carousel()</script>
 {% endblock %}
