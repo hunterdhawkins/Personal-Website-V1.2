@@ -1,5 +1,8 @@
 {% extends "base.html" %}
 {% load static %}
+{% block title %}Resume | Hunter Hawkins{% endblock %}
+{% block og_title %}Resume | Hunter Hawkins{% endblock %}
+{% block twitter_title %}Resume | Hunter Hawkins{% endblock %}
 
 {% block content %}
 <style>
@@ -13,11 +16,14 @@
 <section class="bg-body py-1">
   <div class="text-center pdf-container">
     
-    <!-- Create a link to download/view the file -->
-    <a class="fs-1" href="{{ resume.document.url }}" target="_blank">
-        View/Download File
-    </a>
-    <div class="mb-3"></div>
+    <div class="py-3 d-flex justify-content-center gap-3">
+        <a class="btn btn-outline-dark btn-lg" href="{{ resume.document.url }}" target="_blank">
+            <i class="bi bi-eye me-2"></i>Open in New Tab
+        </a>
+        <a class="btn btn-primary btn-lg" href="{{ resume.document.url }}" download>
+            <i class="bi bi-download me-2"></i>Download
+        </a>
+    </div>
     <embed src="{{ resume.document.url }}" type="application/pdf" width="60%" height="90%" />
 
   </div>

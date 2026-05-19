@@ -4,9 +4,46 @@
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta name="description" content="Industrial software developer with expertise in machine learning, artificial intelligence, and controls." />
+        <meta name="description" content="Hunter Hawkins is a software developer and systems integrator based in Coeur d'Alene, Idaho, specializing in machine learning, industrial controls, and automation." />
         <meta name="author" content="Hunter Hawkins" />
-        <title>Hunter Hawkins - Software Developer</title>
+        <title>{% block title %}Hunter Hawkins - Software Developer | Coeur d'Alene, Idaho{% endblock %}</title>
+        <!-- Open Graph -->
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="Hunter Hawkins" />
+        <meta property="og:locale" content="en_US" />
+        <meta property="og:title" content="{% block og_title %}Hunter Hawkins - Software Developer | Coeur d'Alene, Idaho{% endblock %}" />
+        <meta property="og:description" content="{% block og_description %}Hunter Hawkins is a software developer and systems integrator based in Coeur d'Alene, Idaho, specializing in machine learning, industrial controls, and automation.{% endblock %}" />
+        <meta property="og:url" content="{{ request.build_absolute_uri }}" />
+        <meta property="og:image" content="{% block og_image %}https://www.hunterdhawkins.com/media/images/hunter-favicon.png{% endblock %}" />
+        <!-- Twitter Card -->
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:title" content="{% block twitter_title %}Hunter Hawkins - Software Developer | Coeur d'Alene, Idaho{% endblock %}" />
+        <meta name="twitter:description" content="{% block twitter_description %}Hunter Hawkins is a software developer and systems integrator based in Coeur d'Alene, Idaho, specializing in machine learning, industrial controls, and automation.{% endblock %}" />
+        <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "Person",
+          "name": "Hunter Hawkins",
+          "jobTitle": "Software Developer & Systems Integrator",
+          "url": "https://www.hunterdhawkins.com",
+          "sameAs": [
+            "https://www.linkedin.com/in/hunter-hawkins-552926170/",
+            "https://github.com/hunterdhawkins"
+          ],
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Coeur d'Alene",
+            "addressRegion": "ID",
+            "addressCountry": "US"
+          },
+          "alumniOf": {
+            "@type": "CollegeOrUniversity",
+            "name": "University of Idaho"
+          },
+          "knowsAbout": ["Machine Learning", "Artificial Intelligence", "Industrial Controls", "PLC Programming", "Django", "Python", "Robotics", "Systems Integration"]
+        }
+        </script>
+        <link rel="canonical" href="{{ request.build_absolute_uri }}" />
         <!-- Favicon-->
         <link rel="icon" type="image/x-icon" href="/media/images/hunter-favicon.png" />
         <!-- Custom Google font-->
@@ -32,7 +69,7 @@
                             <li class="nav-item"><a class="nav-link" href="{% url 'home-home' %}">Home</a></li>
                             <li class="nav-item"><a class="nav-link" href="{% url 'home-resume' %}">Resume</a></li>
                             <li class="nav-item"><a class="nav-link" href="{% url 'home-projects' %}">Projects</a></li>
-                            <!-- <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li> -->
+                            <li class="nav-item"><a class="nav-link" href="{% url 'home-home' %}#contact">Contact</a></li>
                         </ul>
                     </div>
                 </div>

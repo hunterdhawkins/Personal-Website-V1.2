@@ -1,5 +1,8 @@
 {% extends "base.html" %}
 {% load static %}
+{% block title %}Hunter Hawkins - Software Developer & Systems Integrator | Coeur d'Alene, Idaho{% endblock %}
+{% block og_title %}Hunter Hawkins - Software Developer & Systems Integrator | Coeur d'Alene, Idaho{% endblock %}
+{% block twitter_title %}Hunter Hawkins - Software Developer & Systems Integrator | Coeur d'Alene, Idaho{% endblock %}
 {% block content %}
 <!-- Header-->
 <style>
@@ -12,7 +15,7 @@
                 <!-- Header text content-->
                 <div class="text-center text-xxl-start">
                     <div class="badge bg-gradient-primary-to-secondary text-white mb-4"><div class="text-uppercase">AI & ML &middot; Automation &middot; Robotics &middot; IT/OT</div></div>
-                    <div class="fs-3 fw-light">Hello, I'm<div class="fs-3 fw-bolder">Hunter Hawkins <div class="fs-6 fw-light text-muted micro-text"> Software Developer & Systems Integrator </div></div></div>
+                    <div class="fs-3 fw-light">Hello, I'm<div class="fs-3 fw-bolder">Hunter Hawkins <div class="fs-6 fw-light text-muted micro-text"> Software Developer &middot; Systems Integrator &middot; Research Scientist </div></div></div>
                     <h1 class="display-3 fw-bolder mb-5"><span class="text-gradient d-inline">Blending AI, industrial controls, and connected infrastructure</span></h1>
                     <div class="d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-xxl-start mb-3">
                         <a class="btn btn-primary btn-lg px-5 py-3 me-sm-3 fs-6 fw-bolder" href="{% url 'home-resume' %}">Resume</a>
@@ -26,7 +29,7 @@
                     <div class="profile bg-gradient-primary-to-secondary" data-aos="flip-left" data-aos-duration="1500">
                         <!-- TIP: For best results, use a photo with a transparent background like the demo example below-->
                         <!-- Watch a tutorial on how to do this on YouTube (link)-->
-                        <img class="profile-img" src="{{ hunter_photo.image.url }}" alt="Hunter Picture Coming Soon" />
+                        <img class="profile-img" src="{{ hunter_photo.image.url }}" alt="Hunter Hawkins - Software Developer and Research Scientist" />
                         <div class="dots-1">
                             <!-- SVG Dots-->
                             <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 191.6 1215.4" style="enable-background: new 0 0 191.6 1215.4" xml:space="preserve">
@@ -154,8 +157,7 @@
                 <div class="text-center my-5">
                     <h2 class="display-5 fw-bolder"><span class="text-gradient d-inline">About Me</span></h2>
                     <!-- <p class="lead fw-light mb-4">My name is Hunter Hawkins and I love software.</p> -->
-                    <p class="text-muted fs-3">I am currently a PhD Candidate at the University of Idaho CDA campus and work as a software developer/ systems integrator at Wapiti-Consulting. For research I have been developing and comparing Machine Learning (ML) and Deep Learning (DL) models to help with Amalgamated Sugars steam dryer. For work I fill a multidisciplinary role where my duties range from programming PLCs, HMIs, VFDs, Python integration software and or AI
-                    models to trouble shooting or starting new control systems out in the field. In my free time I have been working on improving my front end development skills, leadership capabilities, and understading best programming practices.</p>
+                    <p class="text-muted fs-3">I am currently a research scientist at the University of Idaho CDA campus and work as a software developer and systems integrator at Wapiti Consulting. As a Research Scientist at the Center for Intelligent Industrial Robotics (CIIR), I am beginning to manage graduate students working on industrial AI deployments, while continuing to understand and develope Machine Learning (ML), Deep Learning (DL) and Hybrid Models for manufactruring. In addition to research I have bee writing grants for local municiple water and wastewater systems to better the infastructure in North Idaho. At Wapiti, I fill a multidisciplinary role where my duties range from programming PLCs, HMIs, VFDs, Python integration software, and troubleshooting or starting new control systems out in the field. In my free time I have been working on improving my front end development skills, leadership capabilities, and understanding best programming practices.</p>
                 </div>
             </div>
         </div>
@@ -169,7 +171,7 @@
                 <div class="text-center my-3">
                     <h2 class="display-5 fw-bolder"><span class="text-gradient d-inline">Work Experience Overview</span></h2>
                     <div class="container my-5">
-                        <div class="row g-4">
+                        <div class="row g-4 justify-content-center">
                             <div class="col-md-6">
                                 <div class="card shadow-sm h-100">
                                     <div class="card-body">
@@ -183,10 +185,19 @@
                             <div class="col-md-6">
                                 <div class="card shadow-sm h-100">
                                     <div class="card-body">
+                                        <h5 class="card-title mb-1"> <i class="bi bi-robot"></i> Research Scientist (Manager of Industrial AI Applications)</h5>
+                                        <p class="text-muted mb-1"> <i class="bi bi-house-door"></i> Center for Intelligent Industrial Robotics (University of Idaho)</p>
+                                        <small class="text-secondary"> <i class="bi bi-calendar"></i> May 2026 – Present</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="card shadow-sm h-100">
+                                    <div class="card-body">
                                         <h5 class="card-title mb-1"> <i class="bi bi-robot"></i> Graduate Researcher</h5>
                                         <p class="text-muted mb-1"> <i class="bi bi-house-door"></i> Center for Intelligent Industrial Robotics (University of Idaho)</p>
-                                        <small class="text-secondary"> <i class="bi bi-calendar"></i> August 2021 – Present</small>
-                                    </div> 
+                                        <small class="text-secondary"> <i class="bi bi-calendar"></i> August 2021 – May 2026</small>
+                                    </div>
                                 </div>
                             </div>
 
@@ -234,7 +245,7 @@
                                     <div class="card-body text-start">
                                         <div class="d-flex justify-content-between flex-wrap">
                                             <h5 class="mb-1">Doctor of Philosophy in Computer Science</h5>
-                                            <span class="text-muted date-range">August 2024 – Present</span>
+                                            <span class="text-muted date-range">August 2024 – May 2026</span>
                                         </div>
                                         <div class="d-flex justify-content-between flex-wrap">
                                             <p class="mb-1 fw-semibold">University of Idaho</p>
@@ -312,7 +323,7 @@
                             <div class="card shadow-sm cert-card">
                                 <div class="card-body d-flex align-items-center justify-content-center text-center">
                                     <i class="bi bi-patch-check-fill text-primary me-3 fs-3"></i>
-                                    <span>UL508A</span>
+                                    <span>UL508A MTR</span>
                                 </div>
                             </div>
                         </div>
@@ -321,7 +332,7 @@
                             <div class="card shadow-sm cert-card">
                                 <div class="card-body d-flex align-items-center justify-content-center text-center">
                                     <i class="bi bi-patch-check-fill text-primary me-3 fs-3"></i>
-                                    <span>Graduate Industrial Robotics</span>
+                                    <span>Graduate Industrial Robotics (Uidaho)</span>
                                 </div>
                             </div>
                         </div>
@@ -366,21 +377,25 @@
                 <div class="text-center my-3">
                     <h2 class="display-5 fw-bolder"><span class="text-gradient d-inline">Toolchain Experience</span></h2>
                     <!-- <p class="lead fw-light mb-4">TODO</p> -->
-                    <div class="d-flex justify-content-around">
-                      <ul class="fs-3">
-                        <li class="mb-2">Studio 5000 | CCW | RSLinx Classic</li>
-                        <li class="mb-2">Red Lion Crimson 3.2</li>
-                        <li class="mb-2">Click | DoMoreDesigner</li>
-                        <li class="mb-2">OnLogic Industrial PCs</li>
-                        <li class="mb-2">Stratix Switches | Nmap | Wireshark</li>
-                      </ul>
-                      <ul class="fs-3">
-                        <li class="mb-2">Django | Nginx | Gunicorn | Bootstrap</li>
-                        <li class="mb-2">Sklearn | Tensorflow (Keras) | Darts</li>
-                        <li class="mb-2">Paho-MQTT | EMQX</li>
-                        <li class="mb-2">Robot Operating System (ROS) 1 | ROS 2</li>
-                        <li class="mb-2">Linux | Sytemd | CronTab | Netplan</li>
-                      </ul>
+                    <div class="row g-3 mt-2 text-start">
+                      <div class="col-12 col-md-6">
+                        <ul class="fs-5">
+                          <li class="mb-2">Studio 5000 | CCW | RSLinx Classic</li>
+                          <li class="mb-2">Red Lion Crimson 3.2</li>
+                          <li class="mb-2">Click | DoMoreDesigner</li>
+                          <li class="mb-2">OnLogic Industrial PCs</li>
+                          <li class="mb-2">Stratix Switches | Nmap | Wireshark</li>
+                        </ul>
+                      </div>
+                      <div class="col-12 col-md-6">
+                        <ul class="fs-5">
+                          <li class="mb-2">Django | Nginx | Gunicorn | Bootstrap</li>
+                          <li class="mb-2">Sklearn | Tensorflow (Keras) | Darts</li>
+                          <li class="mb-2">Paho-MQTT | EMQX</li>
+                          <li class="mb-2">Robot Operating System (ROS) 1 | ROS 2</li>
+                          <li class="mb-2">Linux | Sytemd | CronTab | Netplan</li>
+                        </ul>
+                      </div>
                     </div>
                 </div>
             </div>
@@ -388,6 +403,51 @@
         <div class="d-flex justify-content-center fs-2 gap-4">
             <a class="text-gradient" href="https://www.linkedin.com/in/hunter-hawkins-552926170/" target="_blank" rel="noopener noreferrer"><i class="bi bi-linkedin"></i></a>
             <a class="text-gradient" href="https://github.com/hunterdhawkins" target="_blank" rel="noopener noreferrer"><i class="bi bi-github"></i></a>
+        </div>
+    </div>
+</section>
+
+<section class="bg-light py-5" id="contact">
+    <div class="container px-5">
+        <div class="row gx-5 justify-content-center" data-aos="fade-up" data-aos-duration="1500">
+            <div class="col-xxl-12">
+                <div class="text-center my-3">
+                    <h2 class="display-5 fw-bolder"><span class="text-gradient d-inline">Get In Touch</span></h2>
+                    <p class="text-muted fs-5 mt-3">Feel free to reach out for collaborations, opportunities, or just to connect.</p>
+                    <div class="row g-4 justify-content-center mt-2">
+                        <div class="col-12 col-md-4">
+                            <a href="mailto:hunterdhawkins@gmail.com" class="text-decoration-none">
+                                <div class="card shadow-sm h-100">
+                                    <div class="card-body d-flex align-items-center justify-content-center gap-3">
+                                        <i class="bi bi-envelope-fill text-primary fs-3"></i>
+                                        <span class="fs-5">hunterdhawkins@gmail.com</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-12 col-md-4">
+                            <a href="https://www.linkedin.com/in/hunter-hawkins-552926170/" target="_blank" rel="noopener noreferrer" class="text-decoration-none">
+                                <div class="card shadow-sm h-100">
+                                    <div class="card-body d-flex align-items-center justify-content-center gap-3">
+                                        <i class="bi bi-linkedin text-primary fs-3"></i>
+                                        <span class="fs-5">LinkedIn</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-12 col-md-4">
+                            <a href="https://github.com/hunterdhawkins" target="_blank" rel="noopener noreferrer" class="text-decoration-none">
+                                <div class="card shadow-sm h-100">
+                                    <div class="card-body d-flex align-items-center justify-content-center gap-3">
+                                        <i class="bi bi-github text-primary fs-3"></i>
+                                        <span class="fs-5">GitHub</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </section>
